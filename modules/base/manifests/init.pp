@@ -6,6 +6,10 @@ class base{
     command => '/usr/bin/apt-get update',
   }
 
+  exec { 'apt-get nstall mc':
+    command => '/usr/bin/sudo /usr/bin/apt-get install mc',
+  }
+
   package { "openjdk-6-jdk" :
     ensure => present,
     require => Exec['apt-get update']
